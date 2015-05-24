@@ -18,16 +18,14 @@ Router.onBeforeAction(function () {
 Router.configure({
     layoutTemplate: 'layout'
 });
-Router.route('/', function () {
-    this.layout('layout');
 
-});
-
-Router.route('/login', function () {
-   // this.layout('auth_layout');
-    this.render('login');
-});
-
-Router.route('/admin', function () {
-    this.render('admin');
+Router.map(function(){
+    this.route('home',{path:'/'});
+    this.route('admin',{path:'/admin'});
+    this.route('login',{path:'/login'});
+    this.route('profile',{path:'/profile'});
+    //We can tell our route function which layout template to use by calling the layout method.
+    /*this.route('/', function () {
+     this.layout('home');
+     });*/
 });
