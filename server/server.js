@@ -1,13 +1,14 @@
-process.env.MAIL_URL="smtp://ipv.sazzad@gmail.com:testipvision@smtp.gmail.com:465/";
+process.env.MAIL_URL = "smtp://ipv.sazzad@gmail.com:testipvision@smtp.gmail.com:465/";
 
 /*Email.send({
-    from: "meteor.email.2014@gmail.com",
-    to: "ipv.sazzad@gmail.com",
-    subject: "Meteor Can Send Emails via Gmail",
-    text: "Its pretty easy to send emails via gmail."
-});*/
+ from: "meteor.email.2014@gmail.com",
+ to: "ipv.sazzad@gmail.com",
+ subject: "Meteor Can Send Emails via Gmail",
+ text: "Its pretty easy to send emails via gmail."
+ });*/
 Accounts.config({sendVerificationEmail: true, forbidClientAccountCreation: false});
 User_Profile = new Meteor.Collection('user_profile');
+Apps_IOS = new Meteor.Collection('apps_ios');
 if (Meteor.isServer) {
     Meteor.startup(function () {
         if (User_Profile.find({}).count() === 0) {
@@ -20,5 +21,9 @@ if (Meteor.isServer) {
             });
         }
 
+    });
+
+    Meteor.publish('apps_ios', function () {
+        return Apps_IOS.find();
     });
 }

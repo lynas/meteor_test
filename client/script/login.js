@@ -1,3 +1,4 @@
+Apps_IOS = new Meteor.Collection('apps_ios');
 if (Meteor.isClient) {
     Template.register.events({
         'submit .register': function(event, template){
@@ -5,6 +6,8 @@ if (Meteor.isClient) {
             Accounts.createUser({
                 email: template.find('#register_email').value,
                 password: template.find('#register_password').value
+            },function(data){
+                console.log(data);
             });
 
         }

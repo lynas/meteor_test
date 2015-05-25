@@ -38,9 +38,7 @@ if (Meteor.isClient) {
 
     Template.profile.helpers({
         profile: function () {
-            return {
-                profile_info:Meteor.users.findOne().profile
-            }
+            return Meteor.users.findOne().profile
         }
     });
 
