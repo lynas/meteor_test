@@ -11,3 +11,5 @@ iron:router
 twbs:bootstrap
 mrt:jquery-ui
 accounts-password
+email
+accounts-base
