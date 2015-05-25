@@ -6,6 +6,7 @@ process.env.MAIL_URL="smtp://ipv.sazzad@gmail.com:testipvision@smtp.gmail.com:46
     subject: "Meteor Can Send Emails via Gmail",
     text: "Its pretty easy to send emails via gmail."
 });*/
+Accounts.config({sendVerificationEmail: true, forbidClientAccountCreation: false});
 User_Profile = new Meteor.Collection('user_profile');
 if (Meteor.isServer) {
     Meteor.startup(function () {

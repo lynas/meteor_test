@@ -26,8 +26,21 @@ Router.map(function(){
     this.route('admin',{path:'/admin'});
     this.route('login',{path:'/login'});
     this.route('profile',{path:'/profile'});
+    this.route('verifyEmail', {
+        controller: 'AccountController',
+        path: '/verify-email/:token',
+        action: 'verifyEmail'
+    });
     //We can tell our route function which layout template to use by calling the layout method.
     /*this.route('/', function () {
      this.layout('home');
      });*/
+});
+
+AccountController = RouteController.extend({
+    verifyEmail: function () {
+        Accounts.verifyEmail(this.params.token, function () {
+            Router.go('/');
+        });
+    }
 });
