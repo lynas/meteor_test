@@ -1,0 +1,38 @@
+<template name="profile">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5">
+                <form class="f_profile">
+                    <input class="form-control full_name" type="text" placeholder="Full Name"/>
+                    <input class="form-control phone_number" type="text" placeholder="Phone Nubmer"/>
+                    <select class="form-control sex">
+                        <option value="Male">Male</option>
+                        <option value="Female">female</option>
+                    </select>
+                    <input class="form-control address" type="text" placeholder="Address"/>
+                    <input class="form-control city" type="text" placeholder="City"/>
+                    <input class="form-control country" type="text" placeholder="Country"/>
+                    <input class="form-control post_code" type="text" placeholder="Post Code"/>
+                    <input class="btn btn-lg btn-primary btn-block" type="submit" value="Submit"/>
+                </form>
+            </div>
+            <div class="col-lg-2">
+
+            </div>
+            <div class="col-lg-5">
+                <table border="1 px solid blue">
+                    <tr><td>Full Name</td><td>{{profile.profile_info.full_name}}</td></tr>
+                    <tr><td>Phone Nubmer</td><td>{{profile.profile_info.phone_number}}</td></tr>
+                    <tr><td>Sex</td><td>{{profile.profile_info.sex}}</td></tr>
+                    <tr><td>address</td><td>{{profile.profile_info.address}}</td></tr>
+                    <tr><td>city</td><td>{{profile.profile_info.city}}</td></tr>
+                    <tr><td>country</td><td>{{profile.profile_info.country}}</td></tr>
+                    <tr><td>post_code</td><td>{{profile.profile_info.post_code}}</td></tr>
+
+                </table>
+
+            </div>
+        </div>
+
+    </div>
+</template>
