@@ -1,7 +1,16 @@
 <template name="home">
+    <div >
+        <input class="testb" type="button" value="test"/>
+    </div>
     <div class="container">
-        {{#each apps_ios}}
-            <div>{{_id}}</div>1
+        {{#each apps_gp}}
+            <div class="app_block">
+                <p>
+                    <img src="{{icon}}" width="150" height="150">
+                </p>
+                <p style="word-wrap: break-word;">{{name}}</p>
+                <p><input type="button" class="btn_bottom" value="Buttton" /></p>
+            </div>
         {{/each}}
     </div>
 </template>

@@ -1,0 +1,13 @@
+.app_block{
+    width: 200px;
+    height: 300px;
+    float: left;
+    border: 1px solid red;
+    position: relative;
+}
+
+.btn_bottom {
+    width: 100%;
+    bottom: 0px;
+    position: absolute;
+}

@@ -1,4 +1,3 @@
-Apps_IOS = new Meteor.Collection('apps_ios');
 if (Meteor.isClient) {
     Template.register.events({
         'submit .register': function(event, template){

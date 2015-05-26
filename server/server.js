@@ -8,7 +8,8 @@ process.env.MAIL_URL = "smtp://ipv.sazzad@gmail.com:testipvision@smtp.gmail.com:
  });*/
 Accounts.config({sendVerificationEmail: true, forbidClientAccountCreation: false});
 User_Profile = new Meteor.Collection('user_profile');
-Apps_IOS = new Meteor.Collection('apps_ios');
+//Apps_IOS = new Meteor.Collection('apps_ios');
+Apps_GP  = new Meteor.Collection('apps_gp');
 if (Meteor.isServer) {
     Meteor.startup(function () {
         if (User_Profile.find({}).count() === 0) {
@@ -23,7 +24,54 @@ if (Meteor.isServer) {
 
     });
 
-    Meteor.publish('apps_ios', function () {
-        return Apps_IOS.find();
+    /*Meteor.publish('apps_ios', function () {
+        return Apps_IOS.find({},{limit:20})
+    });*/
+    Meteor.publish('apps_gps', function () {
+        return Apps_GP.find({},{limit:20})
+    });
+
+
+/*    var myjson = {};
+    myjson = JSON.parse(Assets.getText("chunkab.json"));
+    console.log("myjson.length");
+    console.log(myjson.length);
+
+    console.log(myjson.length);
+    for(var i = 0; i < myjson.length; i++) {
+        var obj = myjson[i];
+        Apps_GP.insert(obj)
+
+        console.log(obj.webUrl);
+    }*/
+
+    Meteor.methods({
+        test_server: function (test) {
+            this.unblock();
+            return "from server"+test;
+        }
     });
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
